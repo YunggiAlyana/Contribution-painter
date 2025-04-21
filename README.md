@@ -18,7 +18,7 @@ GitHub Painter allows you to design a custom contribution graph that will appear
 
 ## How to Use
 
-1. Visit the [GitHub Painter website](https://github.com/YunggiAlyana/Contribution-painter)
+1. Visit the [Contribution Painter website](https://github.com/YunggiAlyana/Contribution-painter)
 2. Enter your GitHub repository URL as `https://github.com/YOUR_USER_NAME/YOUR_REPO_NAME`
 3. Select the year you want to use
 4. Start drawing with click & drag on the graph
