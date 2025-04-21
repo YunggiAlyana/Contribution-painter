@@ -251,11 +251,11 @@ echo 'DONE!'`;
 
 // Update to your actual repository URLs
 githubIssuesBtn.addEventListener('click', () => {
-  window.open('https://github.com/your-username/github-painter/issues');
+  window.open('https://github.com/YunggiAlyana/Contribution-painter/issues');
 });
 
 starBtn.addEventListener('click', () => {
-  window.open('https://github.com/your-username/github-painter');
+  window.open('https://github.com/YunggiAlyana/Contribution-painter');
 });
 
 // Add randomness to commit times to make them look natural
