@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GitHub Painter</title>
+  <!-- CSS utama -->
+  <link rel="stylesheet" href="style/main.css"/>
+</head>
+<body class="dark">
+  <div class="container">
+    <h1>GitHub Painter</h1>
+    
+    <!-- Petunjuk penggunaan biar user ngerti cara make -->
+    <div class="instructions">
+      <ol>
+        <li>Enter your GitHub repository URL as <code>https://github.com/YOUR_USER_NAME/YOUR_REPO_NAME</code></li>
+        <li>Select the year you want to use</li>
+        <li>Start drawing with click & drag on the graph</li>
+        <li>Klik <code>"Download script →"</code></li>
+        <li>Go to the directory in your terminal where you downloaded the script</li>
+        <li>Run <code>chmod +x github_painter.sh && ./github_painter.sh</code></li>
+      </ol>
+    </div>
+
+    <!-- Input URL repo dan dropdown tahun -->
+    <div class="input-container">
+      <input type="text" id="repoUrl" placeholder="Enter repo URL" />
+      <select id="year"></select>
+    </div>
+
+    <!-- Kalender kontribusi ala GitHub -->
+    <div class="github-calendar">
+      <div class="calendar-heading">
+        <span id="contribution-count">0 contributions in <span id="display-year">2024</span></span>
+      </div>
+      <div class="calendar-container">
+        <div class="month-labels" id="month-labels"></div>
+        <div class="calendar-grid">
+          <div class="day-labels">
+            <div class="day-label">Mon</div>
+            <div class="day-label">Wed</div>
+            <div class="day-label">Fri</div>
+          </div>
+          <div id="heatmap" class="heatmap"></div>
+        </div>
+      </div>
+
+      <!-- Skala warna kontribusi -->
+      <div class="color-scale">
+        <span>Less</span>
+        <div class="scale-box level-0"></div>
+        <div class="scale-box level-1"></div>
+        <div class="scale-box level-2"></div>
+        <div class="scale-box level-3"></div>
+        <div class="scale-box level-4"></div>
+        <span>More</span>
+      </div>
+    </div>
+
+    <!-- Tombol tools tambahan -->
+    <div class="button-row">
+      <button id="clear">Clear board (esc)</button>
+      <button id="exampleProfile">Example profile</button>
+      <button id="exampleScript">Example script</button>
+      <button id="githubIssues">GitHub Issues</button>
+    </div>
+
+    <!-- Tombol star dan generate script -->
+    <div class="button-row">
+      <button id="star" class="star">Star on GitHub</button>
+      <button id="generate" class="download">Download script →</button>
+    </div>
+
+    <!-- Pilihan warna kontribusi (level 0–4) -->
+    <div class="color-selectors">
+      <div class="color-button empty" data-level="0">
+        <div class="key">space</div>
+      </div>
+      <div class="color-button level-1" data-level="1">
+        <div class="key">a</div>
+      </div>
+      <div class="color-button level-2" data-level="2">
+        <div class="key">s</div>
+      </div>
+      <div class="color-button level-3" data-level="3">
+        <div class="key">d</div>
+      </div>
+      <div class="color-button level-4 selected" data-level="4">
+        <div class="key">f</div>
+      </div>
+    </div>
+
+    <!-- Output script yang digenerate -->
+    <textarea id="output" style="display: none;" readonly></textarea>
+  </div>
+
+  <!-- Script utama -->
+  <script src="script/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+/* === Warna dasar dan tema === */
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --cell-empty: #ebedf0;
+  --cell-1: #9be9a8;
+  --cell-2: #40c463;
+  --cell-3: #30a14e;
+  --cell-4: #216e39;
+
+  --dark-bg: #0d1117;
+  --dark-text: #c9d1d9;
+  --dark-cell-empty: #161b22;
+  --dark-cell-1: #0e4429;
+  --dark-cell-2: #006d32;
+  --dark-cell-3: #26a641;
+  --dark-cell-4: #39d353;
+
+  --accent-yellow: #ffd700;
+  --accent-green: #27ae60;
+}
+
+/* Reset gaya biar konsisten */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styling body umum */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+/* Tema dark mode */
+.dark {
+  --bg: #0d1117;
+  --text: #c9d1d9;
+  --cell-empty: #161b22;
+  --cell-1: #0e4429;
+  --cell-2: #006d32;
+  --cell-3: #26a641;
+  --cell-4: #39d353;
+}
+
+/* Container utama */
+.container {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Judul utama */
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 28px;
+}
+
+/* Area petunjuk */
+.instructions {
+  margin-bottom: 2rem;
+}
+.instructions ol {
+  padding-left: 20px;
+}
+.instructions li {
+  margin-bottom: 0.5rem;
+  color: var(--text);
+  text-align: left;
+}
+
+/* Styling code di dalam petunjuk */
+code {
+  background-color: #2d333b;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #e6edf3;
+}
+
+/* Input dan dropdown */
+.input-container {
+  display: flex;
+  margin-bottom: 1.5rem;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.input-container input,
+.input-container select {
+  padding: 12px;
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+  border: none;
+  outline: none;
+}
+.input-container input {
+  flex: 1;
+}
+.input-container select {
+  width: 150px;
+  border-left: 1px solid #30363d;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml..."); /* Icon panah bawah */
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+
+/* Kalender ala GitHub */
+.github-calendar {
+  background-color: var(--dark-bg);
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  padding: 16px;
+  overflow: hidden;
+}
+.calendar-heading {
+  margin-bottom: 8px;
+  color: var(--dark-text);
+  font-size: 14px;
+  font-weight: 500;
+}
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  position: relative;
+}
+.month-labels {
+  display: block;
+  margin-bottom: 4px;
+  margin-left: 36px;
+  font-size: 12px;
+  color: #8b949e;
+  padding-left: 50px;
+  position: relative;
+  height: 20px;
+}
+.month-label {
+  position: absolute;
+  white-space: nowrap;
+  height: 17px;
+}
+.calendar-grid {
+  display: flex;
+  overflow-x: auto;
+}
+.day-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-right: 4px;
+  margin-top: 12px;
+  font-size: 12px;
+  color: #8b949e;
+}
+.day-label {
+  height: 11px;
+  line-height: 11px;
+  padding-right: 4px;
+  margin-bottom: 2px;
+}
+
+/* Grid kontribusi */
+.heatmap {
+  display: grid;
+  grid-template-rows: repeat(7, 11px);
+  gap: 2px;
+  min-width: 700px;
+  user-select: none;
+}
+.cell {
+  width: 11px;
+  height: 11px;
+  background-color: var(--cell-empty);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background-color 0.1s ease;
+}
+.cell:hover {
+  transform: scale(1.1);
+  z-index: 1;
+}
+/* Level warna kontribusi */
+.cell.cell-1 { background-color: var(--cell-1); }
+.cell.cell-2 { background-color: var(--cell-2); }
+.cell.cell-3 { background-color: var(--cell-3); }
+.cell.cell-4 { background-color: var(--cell-4); }
+
+/* Skala warna legenda */
+.color-scale {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #8b949e;
+}
+.scale-box {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+}
+.scale-box.level-0 { background-color: var(--cell-empty); }
+.scale-box.level-1 { background-color: var(--cell-1); }
+.scale-box.level-2 { background-color: var(--cell-2); }
+.scale-box.level-3 { background-color: var(--cell-3); }
+.scale-box.level-4 { background-color: var(--cell-4); }
+
+/* Tombol-tombol aksi */
+.button-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+button {
+  padding: 8px 12px;
+  background-color: #21262d;
+  color: var(--dark-text);
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+button:hover {
+  background-color: #30363d;
+}
+button.selected {
+  border: 2px solid #ffffff;
+}
+button.star {
+  background-color: transparent;
+  color: var(--accent-yellow);
+  border-color: var(--accent-yellow);
+  flex: 1;
+}
+button.download {
+  background-color: var(--accent-green);
+  color: white;
+  border-color: var(--accent-green);
+  flex: 1;
+}
+
+/* Output script */
+textarea {
+  width: 100%;
+  height: 200px;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 1rem;
+}
+
+/* Tombol pemilih warna */
+.color-selectors {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 2rem;
+}
+.color-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+.color-button.selected {
+  border-color: #ffffff;
+  transform: scale(1.1);
+}
+.color-button.empty {
+  background-color: var(--dark-cell-empty);
+  border: 2px solid #30363d;
+}
+.color-button.level-1 { background-color: var(--cell-1); }
+.color-button.level-2 { background-color: var(--cell-2); }
+.color-button.level-3 { background-color: var(--cell-3); }
+.color-button.level-4 { background-color: var(--cell-4); }
+
+.color-button .key {
+  position: absolute;
+  bottom: -20px;
+  font-size: 12px;
+  color: #8b949e;
+}
