@@ -216,7 +216,7 @@ colorButtons.forEach(btn => {
 
 // Example buttons - update URLs to actual repository
 exampleProfileBtn.addEventListener('click', () => {
-  window.open('https://github.com/YunggiAlyana');
+  window.open('https://github.com/YunggiAlyana?tab=overview&from=2024-12-01&to=2024-12-31');
 });
 
 exampleScriptBtn.addEventListener('click', () => {
@@ -285,7 +285,7 @@ generateBtn.addEventListener('click', () => {
   
   // Validate URL format
   if (!repoUrlValue.match(/^https?:\/\/github\.com\/[\w-]+\/[\w-]+$/)) {
-    alert("Please enter a valid GitHub repository URL in the format: https://github.com/username/repo whitout .git");
+    alert("Please enter a valid GitHub repository URL in the format: https://github.com/username/repo without .git");
     return;
   }
 
