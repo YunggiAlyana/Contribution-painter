@@ -1,6 +1,6 @@
 # Contribution Painter
 
-> Inspired by [GitHub Painter](https://github.com/mattrltrent/github-painter) by [@mattrltrent](https://github.com/mattrltrent)
+> Inspired by [GitHub Painter](https://github.com/mattrltrent/github_painter) by [@mattrltrent](https://github.com/mattrltrent)
 
 Create custom contribution patterns on your GitHub profile with this interactive tool.
 
