@@ -6,7 +6,7 @@ Create custom contribution patterns on your GitHub profile with this interactive
 
 ## Overview
 
-**Contribution Painter** is a tool that allows you to design a custom contribution graph that appears on your GitHub profile. This project was created as a learning exercise, heavily inspired by the original [GitHub Painter](https://github.com/mattrltrent/github-painter) by Matthew Trent.
+**Contribution Painter** is a tool that allows you to design a custom contribution graph that appears on your GitHub profile. This project was created as a learning exercise, heavily inspired by the original [GitHub Painter](https://github.com/mattrltrent/github_painter) by Matthew Trent.
 
 While this version was written from scratch with different code, much of the UI layout and core functionality is similar to the original. I acknowledge and appreciate the inspiration and apologize for not crediting it earlier.
 
